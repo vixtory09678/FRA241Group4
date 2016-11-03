@@ -1,72 +1,60 @@
+/*
+Library ServerManager service HTTP Protocol RESTful
+Support only json data now 
+created by teamkung
+github www.github.com/vixtory09678
+*/
+
+#include <ServerManager.h>
 #include <ESP8266WiFi.h>
 
-int test_delay = 1000; //so we don't spam the API
-boolean describe_tests = true;
-
-const char* ssidWiFi = "teamkuywa";
-const char* passWiFi = "testtest";
-//for connect wifi
-
-const char* host = "api.thingspeak.com";
-const int PORT = 80;
-const char* contentType = "application/x-www-form-urlencoded";
-const char* url = "/channels/106748/fields/1/last.json";
-
-const char* API_KEY = "CQ0CIKNV5SONBQS3";
-const char* channel_id = "106748";
-//RestClient client  = RestClient("10.0.1.47",5000);
+const char* ssid = "teamkuywa";
+const char* password = "testtest";
 
 WiFiServer server(80);
 
-//Setup
-void setup() {
+const char* urlPart = "/channels/106748/fields/1/last.json";
+bool checkSend = false;
+
+void setup(){
   Serial.begin(115200);
+  WiFi.begin(ssid,password);
+  ServerManager::getInstance()->setWiFiServer(&server);
+}
+String jsonStr = "";
+unsigned long timeDelay = 0;
 
-  WiFi.begin(ssidWiFi,passWiFi);
-  while(WiFi.status() != WL_CONNECTED){
-    Serial.print(".");
-    delay(500);
+void loop(){
+
+  //get
+  ServerManager::getInstance()->setHosting("api.thingspeak.com",80);
+  if(millis() - timeDelay > 500){
+    ServerManager::getInstance()->get(urlPart,&jsonStr);
+    //ServerManager::getInstance()->get(urlPart);
   }
-  Serial.println("\n\n");
-  Serial.print("connected : ");
-  Serial.println(WiFi.localIP());
+  
 
-  Serial.println("Setup!");
+  //post
+  String getValuetoSend = readFromSerial();
+  if(checkSend && getValuetoSend.length() > 0){
+    String send = "api_key=CQ0CIKNV5SONBQS3&field1="+getValuetoSend;
+    ServerManager::getInstance()->post(send.c_str(),&jsonStr);
+  }
+    
+  //Display
+  Serial.print("data is ");
+  Serial.println(jsonStr);
 }
 
-String line = "";
-// Run the tests!
-void loop(){
-  delay(500);
-  WiFiClient client = server.available(); 
-  Serial.print("Requesting URL : ");
-  Serial.println(url);
-  
-  if(!client.connect(host,PORT)){
-    Serial.print(".");
-    return;
-  }else{
-    client.print(String("GET ")+url+" HTTP/1.1\r\n" +
-                        "Host: " + host +"\r\n" +
-                        "Connection: close\r\n"+
-                        "Content-Type: "+contentType+"\r\n\r\n");
-                      delay(50);
-    Serial.println("SEND !!");
+String readFromSerial(){
+  String valueFromUser = "";
+  while(Serial.available()){
+    char r = Serial.read();
+    if(r > 47 && r < 58){
+      valueFromUser.concat(r);
+    }else{
+      if(r == '\n') checkSend = true;
+    }
   }
-  while(!client.available()){
-  }
-  while(client.available()){
-    line += (char)client.read();
-  }
-  Serial.println(line);
-  String json = "";
-  if(line.indexOf("{")<0){
-    json = "empty";
-  }else{
-    json = line.substring(line.indexOf("{"),line.indexOf("}")+1);
-  }
-  
-  Serial.println(json);
-  client.stop();
-  line = "";
+  return valueFromUser;
 }
