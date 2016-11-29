@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_750c4a7e05b1d6f216e0bf3936af1e392aaa8282.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.8.0_9b6fffef97365d24ec588bfdd31de03cc8a11f2e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_3167d64a561bb5c8c06d782462ab18377781a780.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_8ed159a187c6d770aa06b0e3563f6ae007982090.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_05ad74bcd15c03eb7f3fbe70cd538051bbb7da27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_2fae632b12560964ed54abefc6d8a9197f8454fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_805951340518c0bb939a372e0fada6d4be150f13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Palmkongkiet\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_6b18277cde3422f9111c689a3943ff37b6ae4aa7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3267f7da16c44e90637d8d3004b47e951d7235f2">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\instant-run_a41b037ea6509440cb505022d8ea251dd042ddcb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_96769f2c205ec8b561d06c69f594ac1ff3671d87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e03054f653e90a45f9589e533d31d3de68bd8fed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_4338a905436d59ed68d5af523159a7db4149e720.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6cce479550fe99e1653643995a70b53750ca5ea3">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_d359277dbd68476c7c62b728aab36d5ce4ce90b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_9feb72caca3cadb5b9ed4db87d68a3c1e4ac3998.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-9.8.0_39743364a0c9307a12ce95ab81cd2147012da268.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_52cf400b844344602aa22e5a7a8826cbefffe1d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_466c1c58411078ccbe0a9dcbcfa3c1e806f38210.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_a23d6c15a3caffd329eba2dbd01e302c608f8b98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_ae4178ab245484ba6457d7e265f37b52c89a7c21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-9.8.0_1fbe2ffc92982a1ba451fa0d4144dd15e952a020.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Ebus_Tracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="D:\Ebus_Tracking\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.8.0_7a573c4d7ca70f65832fff85612512fedfcbbf09.jar" />
+    </item>
+
+</items>
