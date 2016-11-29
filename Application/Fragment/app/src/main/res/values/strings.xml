@@ -1,5 +1,66 @@
 <resources>
-    <string name="app_name">Fragment</string>
+    <string name="app_name">e-Bus</string>
     <string name="open_drawer">Open Menu</string>
     <string name="close_drawer">Close Menu</string>
+    <string name="Report">ความคิดเห็น/ร้องเรียน</string>
+    <string name="dialog_topic">ส่งข้อมูลเรียบร้อย</string>
+    <string name="SendFeedback">ส่ง</string>
+    <string name="dialog_message">ข้อมูลของทุกท่านมีประโยชน์อย่างมาก ขอขอบพระคุณสำหรับความคิดเห็น</string>
+    <string name="close_dialog">ปิด</string>
+    <string name="Text_Field">เขียนความคิดเห็น</string>
+    <string name="About_us">แอพพลิเคชั่นนี้จัดทำโดยคณะนักศึกษา\nจากสถาบันวิทยาการหุ่นยนต์ภาคสนาม (FIBO) ชั้นปริญญาตรีปีที่ 2 ปีการศึกษา 2559 </string>
+
+    <string-array name="Building_Search">
+        <item>สถาบันวิทยาการหุ่นยนต์ภาคสนาม - ฟีโบ้</item>
+        <item>Institude of Field Robotics - FIBO</item>
+        <item>อาคารเรียนรวม 1</item>
+        <item>Classroom Building 1</item>
+        <item>อาคารเรียนรวม 2</item>
+        <item>Classroom Building 2</item>
+        <item>อาคารเรียนรวม 3</item>
+        <item>Classroom Building 3</item>
+        <item>อาคารเรียนรวม 4</item>
+        <item>Classroom Building 4</item>
+        <item>อาคารเรียนรวม 5</item>
+        <item>Classroom Building 5</item>
+        <item>อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี - โรงอาหาร</item>
+        <item>King Mongkut Food Center</item>
+        <item>โรงเรียนดรุณสิกขาลัย</item>
+        <item>Darunsikkhalai School</item>
+        <item>อาคารวิศววัฒนะ</item>
+        <item>ตึกแดง</item>
+        <item>Engineering Building</item>
+        <item>อาคารวิศวกรรมเคมี</item>
+        <item>Chemical Engineer Building</item>
+        <item>บ้านธรรมรักษา 1 - หอชาย</item>
+        <item>Domitory Male</item>
+        <item>บ้านธรรมรักษา 2 - หอหญฺิง</item>
+        <item>Domitory Female</item>
+        <item>อาคารจอดรถสูง 14 ชั้น</item>
+        <item>อาคารสำนักงานอธิการบดี</item>
+        <item>Office of The President</item>
+        <item>อาคารเรียนและปฏิบัติการคณะพลังงานและสิ่งแวดล้อมและวัสดุ</item>
+        <item>School of Energy, Environment and Materials</item>
+        <item>อาคารโรงประลองเทคโนโลยีและวัสดุ</item>
+        <item>Energy and Materials Workshop</item>
+        <item>อาคารอเนกประสงค์</item>
+        <item>อาคารศิลปศาสตร์</item>
+        <item>School of Liberal Arts</item>
+        <item>อาคารภาควิชาเคมี</item>
+        <item>Chemistry Department Building</item>
+        <item>อาคารภาควิชาฟิสิกส์</item>
+        <item>Department of Physics Building</item>
+        <item>อาคารภาควิชาคณิตศาสตร์</item>
+        <item>Department of Mathematics Building</item>
+        <item>อาคารศูนย์เครื่องมือวิทยาศาสตร์</item>
+        <item>Scientic Instrumentation Center</item>
+        <item>อาคารภาควิชาจุลชีววิทยา</item>
+        <item>Microbiology Building</item>
+        <item>อาคารปฏิบัติการพื้นฐานทางวิทยาศาสตร์</item>
+        <item>Fundamental Science Laboratory Building</item>
+        <item>สำนักหอสมุด</item>
+        <item>Library Building</item>
+        <item>อาคารคณะเทคโนโลยีสารสนเทศ</item>
+        <item>School of Information Technology - SIT</item>
+    </string-array>
 </resources>

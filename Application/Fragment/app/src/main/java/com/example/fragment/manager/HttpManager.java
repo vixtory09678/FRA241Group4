@@ -7,6 +7,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -30,11 +32,15 @@ public class HttpManager {
         mContext = Contextor.getInstance().getContext();
 
         //สร้างGson ใหม่เองเพื่อรับFormat dateให้ตรงกัน
-        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create();
+        Gson gson = new GsonBuilder().setLenient().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create();
 
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(loggingInterceptor).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.thingspeak.com/")
+                .baseUrl("http://178.62.101.217/")
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
