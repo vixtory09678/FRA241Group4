@@ -1,0 +1,85 @@
+/*
+||  Simple Password Entry Using Matrix Keypad
+||  4/5/2012 Updates Nathan Sobieck: Nathan@Sobisource.com
+||
+*/
+//* is to validate password   
+//# is to reset password attempt
+/////////////////////////////////////////////////////////////////
+#include <Password.h> //http://www.arduino.cc/playground/uploads/Code/Password.zip
+#include <Keypad.h> //http://www.arduino.cc/playground/uploads/Code/Keypad.zip
+
+const byte ROWS = 5; 
+const byte COLS = 4; 
+
+String sum;
+char get[4];
+String thisnumber,mileup,miledown,meterup,meterdown;
+int i=0;
+// Define the Keymap
+char keys[ROWS][COLS] = {
+  {'F','G','#','.'},
+  {'1','2','3','U'},
+  {'4','5','6','D'},
+  {'7','8','9','E'},
+  {'L','0','R','N'}
+};
+byte rowPins[ROWS] = {30, 32, 34, 36 , 38};
+byte colPins[COLS] = {46, 44, 42, 40};
+// Create the Keypad
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+String number="";
+
+void setup(){
+  Serial.begin(9600);
+  keypad.addEventListener(keypadEvent); //add an event listener for this keypad
+}
+void loop(){
+  keypad.getKey();
+}
+//take care of some special events
+/*void keypadEvent(KeypadEvent eKey){
+  switch (keypad.getState()){
+    case PRESSED:
+Serial.print("Pressed: ");
+Serial.println(eKey);
+switch (eKey){
+ case '*': checkPassword(); break;
+ case '#': password.reset(); break;
+ default: password.append(eKey);
+     }
+  }
+}
+void checkPassword(){
+  if (password.evaluate()){
+    Serial.println("Success");
+    //Add code to run if it works
+  }else{
+    Serial.println("Wrong");
+    //add code to run if it did not work
+  }
+}*/
+void keypadEvent(KeypadEvent num){
+   switch (keypad.getState()){
+    case PRESSED:
+      if(number.length()<3){
+        if(num == 'E'){
+          i++;
+          number.remove(number.length()-1, 1);
+        }
+         else{
+          number.concat(num);
+          
+         }
+        }
+      
+      else{
+        number = num;  
+      }
+      if(number.length()==3){
+        Serial.println(number);
+       
+      }
+    break;
+   }
+}
