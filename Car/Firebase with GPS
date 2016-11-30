@@ -1,0 +1,71 @@
+
+#include <SoftwareSerial.h>
+#include <ESP8266WiFi.h>
+#include <FirebaseArduino.h>
+#include <Ublox.h>
+
+#define HOST "hihi-bc070.firebaseio.com"
+#define KEY "5He0w6dcQ4mBn9k8biy4iPgwjHBIgzz5l0bAwlaT"
+
+#define SSID "rangjones"
+#define PASS "j1s4a5a7t7"
+
+
+#define SERIAL_BAUD 9600
+#define GPS_BAUD 9600
+#define N_FLOATS 4
+SoftwareSerial mSerial(D7,D8); //rxtx
+
+String go,went,gone;
+Ublox M8_Gps;
+// Altitude - Latitude - Longitude - N Satellites
+float gpsArray[N_FLOATS] = {0, 0, 0, 0};
+
+void setup() {
+  pinMode(D0,OUTPUT);
+  digitalWrite(D0,HIGH);
+  // put your setup code here, to run once:
+  Serial.begin(SERIAL_BAUD);
+  mSerial.begin(GPS_BAUD);  // ไม่ได้ ติด watch dog timer ต้องไปแก้ใน library อีก ถ้าเกิดมันมีอะไรซักอย่างมาขัดจังหวะมัน นาน ๆ มันจะ reset อย่างเช่น การส่งข้อมูลรัว ๆ แบบนี้ แบบที่มันหยุดแล้วกลับไป2.1อใหม่? ประมาณนั้น
+  WiFi.begin(SSID,PASS);
+
+  while(WiFi.status() != WL_CONNECTED){
+    Serial.print(".");
+    delay(500);
+  }
+  digitalWrite(D0,LOW);
+  Serial.println("");
+  Serial.println(WiFi.localIP());
+  Firebase.begin(HOST,KEY);
+
+  
+}
+bool checkRead = false;
+void loop() {
+  // put your main code here, to run repeatedly:              
+    while(mSerial.available()){
+       char c = (char)mSerial.read();
+       if (M8_Gps.encode(c)) {
+         checkRead = true;
+         gpsArray[0] = M8_Gps.altitude;
+         gpsArray[1] = M8_Gps.latitude;
+         gpsArray[2] = M8_Gps.longitude; 
+         gpsArray[3] = M8_Gps.sats_in_use;
+         
+            
+    }
+       }
+    
+  String s1 = String(gpsArray[1],6) , s2 = String(gpsArray[2],6);
+  
+  if(checkRead==true){
+    Serial.println("pass4");
+    for(byte i = 0; i < N_FLOATS; i++) {
+      Serial.print(gpsArray[i], 6);Serial.print(" ");
+    }
+    
+    Firebase.setString("gps/latitude",s1);      
+    Firebase.setString("gps/longtitude",s2);
+    checkRead = false;
+  }
+}
