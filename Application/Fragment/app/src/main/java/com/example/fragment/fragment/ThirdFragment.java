@@ -1,5 +1,7 @@
 package com.example.fragment.fragment;
 
+import android.app.Dialog;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,12 +10,14 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fragment.MainActivity;
 import com.example.fragment.R;
 import com.example.fragment.dao.Update;
 import com.example.fragment.manager.HttpManager;
@@ -68,7 +72,6 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
     @SuppressWarnings("UnusedParameters")
     private void initInstances(View rootView, Bundle savedInstanceState) {
         // Init 'View' instance(s) with rootView.findViewById here
-        sampleComment = (TextView) rootView.findViewById(R.id.sampleComment);
         comment = (EditText) rootView.findViewById(R.id.comment);
         sendButton = (Button) rootView.findViewById(R.id.sendButton);
         sendButton.setOnClickListener(ThirdFragment.this);
@@ -78,7 +81,6 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE){
                     //copy text to show on textView
-                    sampleComment.setText(comment.getText());
                     return true;
                 }
                 return false;
@@ -118,16 +120,13 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         if (v.getId() == R.id.sendButton)
         {
-            sampleComment.setText(comment.getText());
+            Call<Update> call = HttpManager.getInstance().getService().sendFeedback("application/x-www-form-urlencoded",comment.getText().toString());
 
-            Update object = new Update ("CQ0CIKNV5SONBQS3",comment.getText().toString());
-            Call<Update> call = HttpManager.getInstance().getService().sendFeedback(object);
-
-            Toast.makeText(getContext(),"api_key=CQ0CIKNV5SONBQS3&field1="+comment.getText().toString(),Toast.LENGTH_SHORT).show();
             call.enqueue(new Callback<Update>() {
                 @Override
                 public void onResponse(Call<Update> call, Response<Update> response) {
                     if(response.isSuccessful()){
+
                         Log.e("Raw data",response.raw().toString());
                     }else{
                         Log.e("Fail","Load fail fuckyou"+response.errorBody());
@@ -139,8 +138,30 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
                     Log.e("Sync fail","fuckyou sync fail");
                 }
             });
+
+            MainActivity mainActivity = (MainActivity)getActivity();
+            mainActivity.setPage(1);
+            showComplete();
             comment.setText("");
         }
 
+    }
+
+    public void showComplete(){
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_success);
+        dialog.setCanceledOnTouchOutside(true);
+        //for dismissing anywhere you touch
+        View masterView = dialog.findViewById(R.id.dialog_success);
+        Button closeDialog = (Button) dialog.findViewById(R.id.close_dialog_btn);
+        closeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 }

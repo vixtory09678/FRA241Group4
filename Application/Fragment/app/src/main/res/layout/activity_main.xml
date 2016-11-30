@@ -18,53 +18,88 @@
             android:background="?attr/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-        <FrameLayout
-            android:id="@+id/contentContainer"
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </FrameLayout>
+        </android.support.v4.view.ViewPager>
+
+        <!--<FrameLayout-->
+            <!--android:id="@+id/contentContainer"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+        <!--</FrameLayout>-->
     </LinearLayout>
-    <!--Menu-->
+    <!--Menu -->
     <LinearLayout
         android:layout_gravity="start"
-        android:background="#3b3a3a"
+        android:background="#ffffff"
         android:layout_width="@dimen/drawer_menu_width"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:orientation="vertical">
+
+        <AutoCompleteTextView
+            android:id="@+id/place_autocomplete_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dropDownHeight="wrap_content"
+            android:dropDownWidth="wrap_content"
+            android:inputType="text"
+            android:hint="Search"
+            android:textColorHint="#ad282828"
+            android:completionThreshold="1"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:dropDownSelector="#71ffffff" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/colorToolbar">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menu_sign"
+                android:layout_margin="12dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <EditText
-                android:inputType ="text"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                </EditText>
-            <Button
-                android:layout_weight="0.5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_search_white_36dp">
-                </Button>
-            </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF">
             <ImageView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_directions_bus_white_36dp"
-                android:layout_weight="0.5"/>
+                android:src="@drawable/ic_directions_bus_black_24dp"
+                android:layout_gravity="center"/>
             <Button
-                android:textColor="#d6d3d3"
-                android:background="#3b3a3a"
-                android:layout_width="0dp"
+                android:textColor="#000000"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:gravity="center|start"
+                android:paddingLeft="26dp"
                 android:layout_height="wrap_content"
                 android:text="Map"
-                android:layout_weight="2"
+                android:textSize="16sp"
+                style="@style/AppTheme"
+                android:textStyle="bold"
                 android:id="@+id/mapButton"
                 />
 
@@ -73,70 +108,112 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="#FFFFFF">
             <ImageView
-                android:layout_weight="0.5"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_help_white_36dp">
+                android:src="@drawable/ic_help_outline_black_24dp"
+                android:layout_gravity="center">
                 </ImageView>
             <Button
-                android:textColor="#d6d3d3"
-                android:background="#3b3a3a"
-                android:layout_weight="2"
+                android:textColor="#000000"
+                android:background="#ffffff"
                 android:id="@+id/second_Page"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                style="@style/AppTheme"
+                android:gravity="center|start"
+                android:paddingLeft="26dp"
+                android:textStyle="bold"
                 android:text="Help">
             </Button>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#FFFFFF">
 
             <ImageView
-                android:layout_weight="0.5"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_info_white_36dp">
+                android:src="@drawable/ic_info_outline_black_24dp"
+                android:layout_gravity="center">
                 </ImageView>
             <Button
-                android:textColor="#d6d3d3"
-                android:background="#3b3a3a"
-                android:layout_weight="2"
+                android:textColor="#000000"
+                android:background="#ffffff"
                 android:id="@+id/third_Page"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Feedback"/>
+                android:text="Feedback"
+                android:textSize="16sp"
+                android:gravity="center|start"
+                android:paddingLeft="26dp"
+                style="@style/AppTheme"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="#FFFFFF">
             <ImageView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:src="@drawable/ic_group_white_36dp">
-                </ImageView>
+                android:src="@drawable/ic_people_black_24dp"
+                android:layout_gravity="center">
+
+            </ImageView>
             <Button
-                android:textColor="#d6d3d3"
-                android:background="#3b3a3a"
-                android:layout_weight="2"
+                android:textColor="#000000"
+                android:background="#ffffff"
                 android:id="@+id/fourth_Page"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="AboutUs"/>
+                android:text="About Us"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                style="@style/AppTheme"
+                android:gravity="center|start"
+                android:paddingLeft="26dp"/>
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/AdsImage"
-            android:layout_weight="2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/AdsImage"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:background="#80000000"
+                android:textColor="#ffffff"
+                android:id="@+id/tvContent"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
         </LinearLayout>
 
 

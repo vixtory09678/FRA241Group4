@@ -8,4 +8,41 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+     <string name="style_json">
+        [
+            {
+                \"elementType\": \"labels\",
+                \"stylers\": [
+                    {
+                        \"visibility\": \"off\"
+                    }
+                ]
+            },
+            {
+                \"featureType\": \"administrative.land_parcel\",
+                \"stylers\": [
+                    {
+                        \"visibility\": \"off\"
+                    }
+                ]
+            },
+            {
+                \"featureType\": \"administrative.neighborhood\",
+                \"stylers\": [
+                    {
+                        \"visibility\": \"off\"
+                    }
+                ]
+            },
+            {
+                \"featureType\": \"landscape\",
+                \"stylers\": [
+                    {
+                        \"visibility\": \"off\"
+                    }
+                ]
+            }
+        ]
+    </string>
+
 </resources>
